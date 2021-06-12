@@ -1,7 +1,6 @@
 import React from 'react'
 
 function AllFootballers({footballers}) {
-  console.log(footballers)
   return (
       <table className="table">
         <thead>
