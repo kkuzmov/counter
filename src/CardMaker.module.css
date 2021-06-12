@@ -1,0 +1,9 @@
+.cardMakerForm{
+display: flex;
+flex-direction: column;
+width: 400px;
+margin: 50px auto;
+}
+.cardMakerInput{
+  margin: 10px auto;
+}
