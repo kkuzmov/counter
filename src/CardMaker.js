@@ -2,16 +2,24 @@ import React, { useState } from "react";
 import styles from "./CardMaker.module.css";
 
 function CardMaker({ addFootballer }) {
-  const [fullName, setfullName] = useState("");
-  const [position, setPosition] = useState("");
-  const [club, setClub] = useState("");
+  // const [fullName, setfullName] = useState("");
+  // const [position, setPosition] = useState("");
+  // const [club, setClub] = useState("");
+
+  const [player, setPlayer] = useState({
+    fullName: "",
+    position: "",
+    club: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addFootballer(fullName, position, club);
-    setfullName("");
-    setPosition("");
-    setClub("");
+    addFootballer(player);
+    setPlayer({
+      fullName: "",
+      position: "",
+      club: "",
+    });
   };
 
   // const handleFullNameChange = (e) => {
@@ -31,13 +39,17 @@ function CardMaker({ addFootballer }) {
     let value = e.target.value;
     switch (e.target.name) {
       case "fullName":
-        setfullName(value);
+        setPlayer({ ...player, fullName: value });
+        // setfullName(value);
+        console.log(player);
         break;
       case "position":
-        setPosition(value);
+        setPlayer({ ...player, position: value });
+        // setPosition(value);
         break;
       case "club":
-        setClub(value);
+        setPlayer({ ...player, club: value });
+        // setClub(value);
         break;
       default:
     }
@@ -50,21 +62,21 @@ function CardMaker({ addFootballer }) {
           className={styles.cardMakerInput}
           type="text"
           name="fullName"
-          value={fullName}
+          value={player.fullName}
           onChange={handleChange}
         />
         <input
           className={styles.cardMakerInput}
           type="text"
           name="position"
-          value={position}
+          value={player.position}
           onChange={handleChange}
         />
         <input
           className={styles.cardMakerInput}
           type="text"
           name="club"
-          value={club}
+          value={player.club}
           onChange={handleChange}
         />
         <input type="submit" value="Submit"></input>
