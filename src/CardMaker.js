@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./CardMaker.module.css";
-
 function CardMaker({ addFootballer }) {
   // const [fullName, setfullName] = useState("");
   // const [position, setPosition] = useState("");
