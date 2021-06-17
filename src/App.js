@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import CardMaker from "./CardMaker";
 import AllFootballers from "./AllFootballers";
@@ -9,7 +9,9 @@ function App() {
   const addFootballer = ({fullName, position, club}) => {
     setFootballers([...footballers, { name: fullName, position, club }]);
   };
-
+  useEffect(()=>{
+    document.title = 'Testing React app'
+  })
   return (
     <div>
       <header className={styles.headerCardMaker}>Test some card making</header>
